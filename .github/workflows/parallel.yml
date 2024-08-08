@@ -36,11 +36,8 @@ jobs:
     print-matrix:
         strategy:
             matrix:
-                os: [ubuntu-latest, macos-latest]
-                version: [18, 20]
+                os: [ubuntu-latest, windows-latest, macos-latest]
         runs-on: ${{ matrix.os }}
         steps:
-            - uses: actions/setup-node@4
-              with:
-                node-version: ${{matrix.version}}
-            - run: echo "${RUNNER_OS}" && node --version
+            - run: echo "${RUNNER_OS}"
+              shell: bash
