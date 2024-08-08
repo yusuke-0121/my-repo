@@ -1,4 +1,5 @@
 name: Comment
+run-name: Comment
 on: pull_request
 jobs: 
     comment:
