@@ -4,6 +4,9 @@ jobs:
    print:
     runs-on: ubuntu-latest
     env:
-        USERNAME: ${{vars.YUSUKE_0121}}
+        USERNAME: ${{vars.USERNAME}}
+        PASSWORD: ${{secrets.PASSWORD}}
     steps:
         - run: echo "${USERNAME}" 
+        - run: echo "${PASSWORD}"
+        - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
