@@ -1,6 +1,20 @@
 name: Parallel jobs
 on: push
 jobs:
+    before:
+        runs-on: ubuntu-latest
+        steps:
+            - id: generate
+              run: echo "answer=Hello" >> "${GITHUB_OUTPUT}"
+        outputs:
+            result: ${{ steps.generate.outputs.answer}}
+    after:
+        runs-on: ubuntu-latest
+        needs: [before]
+        steps:
+            - env:
+                RESULT: ${{ needs.before.outputs.answer }}
+              run: echo "${RESULT}"
     first-1:
         runs-on: ubuntu-latest
         steps:
