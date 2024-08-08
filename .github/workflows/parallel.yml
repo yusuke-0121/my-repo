@@ -33,3 +33,14 @@ jobs:
         needs: [second]
         steps:
             - run: sleep 10 && echo "Third job"
+    print-matrix:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest]
+                version: [18, 20]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/setup-node@4
+              with:
+                node-version: ${{matrix.version}}
+            - run: echo "${RUNNER_OS}" && node --version
