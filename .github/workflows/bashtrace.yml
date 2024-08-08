@@ -3,8 +3,18 @@ on: push
 jobs:
     log:
         runs-on: ubuntu-latest
+        env:
+            PASSWORD: SuperSecretValue
         steps:
             - run: |
                 set -x
                 date
                 hostname
+                echo "::group::Show environment variable"
+                printenv
+                echo "::endgroup::"
+                echo "::add-mask::${PASSWORD}"
+                echo "${PASSWORD}"
+                echo "::group::Show qmonus"
+                ip a
+                echo "::endgroup::"
