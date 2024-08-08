@@ -29,3 +29,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub CLI用クレデンシャル
       - run: echo "${GITHUB_HEAD_REF}"
       - run: echo "${GITHUB_TOKEN}"
+      - run: echo "${GITHUB_TOKEN}"
