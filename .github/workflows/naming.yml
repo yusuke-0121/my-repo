@@ -1,0 +1,10 @@
+name: Naming
+run-name: naming & run name by ${{ github.actor }}
+on: push
+jobs:
+  print-print:
+    name: Supre Useful Job
+    runs-on: ubuntu-latest
+    steps:
+        - name: Amazing Script
+          run: echo "Hello" 
