@@ -1,0 +1,9 @@
+name: Variable
+on: push
+jobs: 
+   print:
+    runs-on: ubuntu-latest
+    env:
+        USENAME: ${{vars.YUSUKE_0121}}
+    steps:
+        - run: echo "${USERNAME}" 
