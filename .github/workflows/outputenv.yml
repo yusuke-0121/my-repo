@@ -1,0 +1,13 @@
+name: github_output_env
+on: push
+jobs:
+    output_env:
+      runs-on: ubuntu-latest
+      steps:
+        - id: source
+          run: echo "rerult=Hello output" >> "${GITHUB_OUTPUT}"
+        - env:
+            RESULT: ${{steps.source.outputs.result}}
+          run: echo "${RESULT}"
+        - run: echo "RESULT_ENV=Hello env" >> "${GITHUB_ENV}"
+        - run: echo "${RESULT_ENV}"
