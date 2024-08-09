@@ -6,3 +6,4 @@ jobs:
         steps:
          - uses: actions/setup-go@v4
          - run: echo "update package"
+         - run: echo "v1.0.1"
