@@ -7,3 +7,4 @@ jobs:
          - uses: actions/setup-go@v4
          - run: echo "update package"
          - run: echo "v1.0.1"
+         - run: echo "v1.0.2"
